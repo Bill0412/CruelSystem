@@ -29,5 +29,5 @@
 
 5.5 mock machine failure by killing 200 workers(machine still functioning properly), just increase 5% time
 
-6 first version of MapReduce library done in 2003 Feb, instances grow to 900 2004 Sep.
+6 first version of MapReduce library done in 2003 Feb, instances grow to 900 2004 Sep in Google.
 
