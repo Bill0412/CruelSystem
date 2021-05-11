@@ -10,10 +10,12 @@ reduce(string key, vector<T> value_vec):
 	for (auto value : value_vec) value_sum.add(value);
 	generate({key, value_sum})
 
-common examples: word count, distribute grep, distribute sort, inverted index
+2.3: common examples: word count, distribute grep, distribute sort, inverted index
 
-usage of system: users submit jobs to scheduling system(one job consists of multiple tasks)
+3: usage of system: users submit jobs to scheduling system(one job consists of multiple tasks)
+3.1: M mapper + R reducer + 1 master
+		 usually input_size / M = 64M
+3.2: master mantain locations of each split of immediates, a table of M * R stats
+3.3: worker failure: re-execute when map done, map in progress, reducer in progress(reducer done don't need to re-execute)
+     master failure: shutdown
 
-M mapper + R reducer + 1 master
-master mantain table of M * R stats
-usually input_size / M = 64M
